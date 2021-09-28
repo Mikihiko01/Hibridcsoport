@@ -12,23 +12,21 @@ man, footer, header, article, section{
 }
 table{
     width:100%;
+}
+
+table tr,td,th{
+    font-size: 20px;
+    border-radius: 5px;
+    border-collapse: collapse;
     
 }
 
-table,td,th{
-    font-size: 20px;
-    border-radius: 3px;
-    border-collapse: collapse;
-}
 table tr:nth-child(even) {
   background: grey;
-  transform: rotate(-1deg);
 }
 table tr:nth-child(odd) {
   background: darkgoldenrod;
-   transform: rotate(-1deg);
 }
-
 
 header{
     position: relative;

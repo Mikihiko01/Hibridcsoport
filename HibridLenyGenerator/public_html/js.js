@@ -1,7 +1,6 @@
-// const let var
-let lenyek = [];
-let osztalyokTanulok = [];
-let menuSzoveg;
+var lenyek = [];
+var osztalyokTanulok = [];
+var menuSzoveg;
 
 $(function () {
 
@@ -31,47 +30,39 @@ function megjelenit() {/*adatok megjelenitese*/
         osztalyokTanulok[0][menuSzoveg].forEach((a)=>{
             console.log(a);
     });
-
-
     console.log(menuSzoveg);
     $("section").append("<table></table>");
     szoveg = "<tr id='fejléc'><th>OSZTALY</th><th>TANULO</th><th>ALLAT1</th><th>ALLAT2</th><th>ALLAT3</th></tr>";
-    for (let a in osztalyokTanulok[0][menuSzoveg]) {
+    for (var a in osztalyokTanulok[0][menuSzoveg]) {
         szoveg += "<tr id='" + a + "'>";
-
         szoveg += "<td id='" + a + "'>";
         szoveg += menuSzoveg;
-//                    console.log(menuSzoveg);
         szoveg += "</td>";
         szoveg += "<td id='" + a + 1 + "'>";
         szoveg += osztalyokTanulok[0][menuSzoveg][a];
-//                    console.log(osztalyokTanulok[0][menuSzoveg][i]);
         szoveg += "</td>";
-
         szoveg += randomSzamok();
         console.log(randomSzamok());
-
         console.log(" ");
         szoveg += "</tr>";
     }
-
     $("section table").append(szoveg);
 }
 
 function kattint() {
-    let id = document.getElementById("osztaly2");
+    var id = document.getElementById("osztaly2");
     menuSzoveg = id.options[id.selectedIndex].text;
     megjelenit();
 }
 function randomSzamok() {
-    let kiegeszit = "";
-    let randomSzamok = [];
+    var kiegeszit = "";
+    var randomSzamok = [];
     while (randomSzamok.length < 3) {
-        let kijeloltSzam = Math.floor(Math.random() * lenyek.length);
+        var kijeloltSzam = Math.floor(Math.random() * lenyek.length);
         if (randomSzamok.indexOf(kijeloltSzam) === -1)
             randomSzamok.push(kijeloltSzam);
     }
-    for (let i = 0; i < 3; i++) {
+    for (var i = 0; i < 3; i++) {
         kiegeszit += "<td id='" + randomSzamok[i] + "'>";
         kiegeszit += lenyek[randomSzamok[i]];
         kiegeszit += "</td>";
