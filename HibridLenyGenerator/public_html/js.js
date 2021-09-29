@@ -1,6 +1,6 @@
-var lenyek = [];
-var osztalyokTanulok = [];
-var menuSzoveg;
+let lenyek = [];
+let osztalyokTanulok = [];
+let menuSzoveg;
 
 $(function () {
 
@@ -50,19 +50,19 @@ function megjelenit() {/*adatok megjelenitese*/
 }
 
 function kattint() {
-    var id = document.getElementById("osztaly2");
+    let id = document.getElementById("osztaly2");
     menuSzoveg = id.options[id.selectedIndex].text;
     megjelenit();
 }
 function randomSzamok() {
-    var kiegeszit = "";
-    var randomSzamok = [];
+    let kiegeszit = "";
+    let randomSzamok = [];
     while (randomSzamok.length < 3) {
-        var kijeloltSzam = Math.floor(Math.random() * lenyek.length);
+        let kijeloltSzam = Math.floor(Math.random() * lenyek.length);
         if (randomSzamok.indexOf(kijeloltSzam) === -1)
             randomSzamok.push(kijeloltSzam);
     }
-    for (var i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         kiegeszit += "<td id='" + randomSzamok[i] + "'>";
         kiegeszit += lenyek[randomSzamok[i]];
         kiegeszit += "</td>";
